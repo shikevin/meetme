@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:gravity="center_horizontal">
+
+    <!-- button to get location -->
+    <Button
+        android:id="@+id/btnLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get my Location" 
+        android:layout_marginTop="25dip" />
+
+    <!-- TextView to show location -->
+    <TextView
+        android:id="@+id/txtLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+    
+    <!--  Button to push location to server -->
+    <Button android:id="@+id/btnUploadLocation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Location in Server"
+        android:layout_marginTop="25dip"/>    
+        
+    <!--  Button to view all products screen -->
+    <Button android:id="@+id/btnFriendLocation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Friend's Location"
+        android:layout_marginTop="25dip"/>
+            
+</LinearLayout>
