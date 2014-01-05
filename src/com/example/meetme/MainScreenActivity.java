@@ -1,30 +1,16 @@
 package com.example.meetme;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainScreenActivity extends Activity {
@@ -32,7 +18,7 @@ public class MainScreenActivity extends Activity {
 	//declare variables
 	private static String lat ="";
 	private static String lon="";
-	private static final String myId="1";
+	private static String myId="";
 	private static final String urId="3";
 	private static final String TAG_SUCCESS = "success";
 	private static final String TAG_PID = "pid";
@@ -59,22 +45,33 @@ public class MainScreenActivity extends Activity {
 	public static String getLon() {
 		return lon;
 	}
-	
+	EditText editId;
 	
 	Button btnFriendLocation;
 	Button btnUploadLocation;
 	Button btnLocation;
+	Button btnRegisterId;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_screen);
 
+		editId=(EditText)findViewById(R.id.editId);
+		
 		//Buttons
 		btnLocation=(Button)findViewById(R.id.btnLocation);
 		btnUploadLocation=(Button)findViewById(R.id.btnUploadLocation);
 		btnFriendLocation=(Button)findViewById(R.id.btnFriendLocation);
-	
+		btnRegisterId=(Button)findViewById(R.id.btnRegisterId);
+		
+		btnRegisterId.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				myId = editId.getText().toString();
+			}
+		});
+		
+		
 		btnLocation.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				// Acquire a reference to the system Location Manager
