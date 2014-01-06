@@ -19,18 +19,22 @@ public class MainScreenActivity extends Activity {
 	private static String lat ="";
 	private static String lon="";
 	private static String myId="";
-	private static final String urId="3";
+	private static String urId="";
 	private static final String TAG_SUCCESS = "success";
 	private static final String TAG_PID = "pid";
 	private static final String TAG_LATITUDE= "la";
 	private static final String TAG_LONGITUDE = "lo";
 	private static final String UPLOAD_LOCATION = "http://54.200.84.125/ourmeet/update_locations.php";
-	
+	private static final String GET_LOCATION = "http://54.200.84.125/ourmeet/read_specific_location";
 	public static String getUPLOAD_LOCATION() {
 		return UPLOAD_LOCATION;
 	}
 
 	//getter
+	public static String getLocation() {
+		return GET_LOCATION;
+	}
+	
 	public static String getLat() {
 		return lat;
 	}

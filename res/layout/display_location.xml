@@ -3,32 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
-    <TextView android:layout_width="fill_parent"
+  
+      <TextView
+        android:id="@+id/txtInformation"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Friend User ID"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:textSize="17dip"/>
+        android:text="TextView" />  
         
-    <!-- Input Name -->
-    <EditText android:id="@+id/inputUser"
+      <EditText android:id="@+id/txtLocation"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
-        android:singleLine="true"/>
-        
-    <TextView
-        android:id="@+id/txtDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Location Output" />
-        
-    <Button android:id="@+id/btnFetch"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Fetch Location"
-        android:layout_weight="1"/>                     
+        android:lines="4" />            
 </LinearLayout>

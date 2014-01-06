@@ -37,12 +37,14 @@ public class UploadLocation extends Activity {
 
 		txt.setText("Connecting...");
 		new sendServerData().execute();
+		txt.setText("Location has been uploaded under ID " + myID);
 		//txt.setText(getStringFromInputStream(sendServerData(myID,upload_url, lat, lon)));
 	}
 
 	public class sendServerData extends AsyncTask <String, String, String>{
 		
 		protected String doInBackground (String... arg0) {
+			
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpPost httppost = new HttpPost(upload_url);
 			
