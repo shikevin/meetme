@@ -25,7 +25,7 @@ public class MainScreenActivity extends Activity {
 	private static final String TAG_LATITUDE= "la";
 	private static final String TAG_LONGITUDE = "lo";
 	private static final String UPLOAD_LOCATION = "http://54.200.84.125/ourmeet/update_locations.php";
-	private static final String GET_LOCATION = "http://54.200.84.125/ourmeet/read_specific_location";
+	private static final String GET_LOCATION = "http://54.200.84.125/ourmeet/read_specific_location.php";
 	public static String getUPLOAD_LOCATION() {
 		return UPLOAD_LOCATION;
 	}
