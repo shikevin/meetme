@@ -10,29 +10,47 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class DisplayLocation extends Activity{
-	
-	String thisShit="";
-	String urId="3";
+
+	String urId="";
 	String get_location = MainScreenActivity.getLocation();
 	TextView txtInformation, txtLocation;
 	//EditText txtLocation;
 	JsonParser jsonParser = new JsonParser();
+	Button btnSetId, btnFetchLocation;
+	EditText editSearch;
 	
 	public void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.display_location);
 		txtInformation = (TextView) findViewById(R.id.txtInformation);
 		txtInformation.setText("Loading...");
-
-		new getServerData().execute();
+		
+		editSearch=(EditText)findViewById(R.id.editSearch);
+		btnSetId=(Button)findViewById(R.id.btnSetId);
+		
+		btnSetId.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				urId = editSearch.getText().toString();
+			}
+		});
+		
+		btnFetchLocation=(Button)findViewById(R.id.btnFetchLocation);
+		
+		btnFetchLocation.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				new getServerData().execute();
+			}
+		});
 	}
 
 	class getServerData extends AsyncTask<String, String, String> {

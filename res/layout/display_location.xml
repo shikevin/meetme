@@ -10,6 +10,26 @@
         android:layout_height="wrap_content"
         android:text="TextView" />  
        
+       	<EditText
+		android:id="@+id/editSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number" />
+        
+        <Button
+        android:id="@+id/btnSetId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Numerical Id" 
+        android:layout_marginTop="25dip" />
+        
+        <Button
+        android:id="@+id/btnFetchLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Numerical Id" 
+        android:layout_marginTop="25dip" />
+        
        <TextView
         android:id="@+id/txtLocation"
         android:layout_width="wrap_content"
